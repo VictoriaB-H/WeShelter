@@ -1,11 +1,119 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <section class="aktivitets-cards">
+    <h2>Hvad kan du hjælpe med?</h2>
+    <article class="cards">
+      <Card
+        image="/img/2.svg"
+        hoverImage="/img/madklubber.png"
+        overskrift="Madklub"
+        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
+        link="https://din-destination.dk"
+      />
+      <Card
+        image="/img/1.svg"
+        hoverImage="/img/netværksvenner.png"
+        overskrift="Netværksvenner"
+        beskrivelse="Som netværksven støtter du en, der føler sig alene, gennem samtaler og fælles aktiviteter. En lille indsats kan gøre en stor forskel – måske får du endda en ny venfor livet."
+        link="https://din-destination.dk"
+      /><Card
+        image="/img/3.svg"
+        hoverImage="/img/Økonomi.png"
+        overskrift="Økonomirådgivning"
+        beskrivelse="Brug din viden til at hjælpe andre med at få styr på budget, gæld og økonomiske udfordringer. Som økonomirådgiver giver du støtte og skaber overblik, så folk kan få en tryggere hverdag."
+        link="https://din-destination.dk"
+      /><Card
+        image="/img/4.svg"
+        hoverImage="/img/Peer-to-peer.png"
+        overskrift="Peer to peer"
+        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
+        link="https://din-destination.dk"
+      />
+      <Card
+        image="/img/5.svg"
+        hoverImage="/img/Aktivitetsklubber.png"
+        overskrift="Aktivitetsklubber"
+        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
+        link="https://din-destination.dk"
+      />
+      <Card
+        image="/img/6.svg"
+        hoverImage="/img/LGBTvenner.png"
+        overskrift="LGBT+ venner"
+        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
+        link="https://din-destination.dk"
+      />
+      <Card
+        image="/img/7.svg"
+        hoverImage="/img/Yoga.png"
+        overskrift="Yoga"
+        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
+        link="https://din-destination.dk"
+      />
+      <Card
+        image="/img/8.svg"
+        hoverImage="/img/Massage.png"
+        overskrift="Massage"
+        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
+        link="https://din-destination.dk"
+      />
+      <Card
+        image="/img/9.svg"
+        hoverImage="/img/Møbelhjælp.png"
+        overskrift="Møbelhjælp"
+        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
+        link="https://din-destination.dk"
+      />
+      <Card
+        image="/img/10.svg"
+        hoverImage="/img/Ledelse.png"
+        overskrift="Ledelse af en aktivitet"
+        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
+        link="https://din-destination.dk"
+      />
+    </article>
+  </section>
+  <style>
+    h2 {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2.9rem;
+      margin-bottom: 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 2%;
+    }
+    .aktivitets-cards {
+      margin: 70px;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+      }
+      .cards {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding: 2%;
+        scrollbar-width: none; /* Skjuler scrollbar i Firefox */
+        -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
+      }
+      .cards::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  </style>
 </Layout>
