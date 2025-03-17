@@ -1,0 +1,80 @@
+---
+import Breadcrumb from "../components/Breadcrumb.astro";
+import Button from "../components/Button.astro";
+---
+
+<section class="volunteer-section">
+  <Breadcrumb />
+  <h1>Hjælp hjemløse hjem</h1>
+  <div class="content">
+    <div>
+      <h2>
+        Bliv frivillig og vær med til at give hjemløse og socialt udsatte en
+        bedre hverdag.
+      </h2>
+      <p>
+        Frivillighed er en helt central del af vores arbejde i Missionen blandt
+        Hjemløse, og som frivillig er du med til at skabe unikke relationer og
+        gøre en forskel for hjemløse og socialt udsatte. Se nedenfor, hvilke
+        muligheder der er for at blive frivillig, og læs mere om, hvad det
+        frivillige arbejde hos os indebærer.
+      </p>
+      <Button />
+    </div>
+    <img src="Img/billede1.png" class="image" alt="Frivillig hjælper hjemløs" />
+  </div>
+</section>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    background-color: #ffffff;
+    color: #000;
+  }
+
+  /* .volunteer-section {
+    max-width: 1000px;
+    margin: 0 auto;
+  } */
+
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  /* .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  } */
+
+  .text {
+    max-width: 50%;
+  }
+
+  .text h2 {
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+
+  .text p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  @media (width > 800px) {
+    .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

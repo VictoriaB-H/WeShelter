@@ -1,9 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import VolunteerSection from "../components/VolunteerSection.astro";
+import FaqSection from "../components/FaqSection.astro";
 ---
 
 <Layout>
+  <VolunteerSection />
+
   <section class="aktivitets-cards">
     <h2>Hvad kan du hjælpe med?</h2>
     <article class="cards">
@@ -77,6 +81,8 @@ import Card from "../components/Card.astro";
       />
     </article>
   </section>
+  <FaqSection />
+
   <style>
     h2 {
       text-align: center;
