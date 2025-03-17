@@ -2,9 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import FriviligCard from "../components/FriviligCard.astro";
+import VolunteerSection from "../components/VolunteerSection.astro";
+import FaqSection from "../components/FaqSection.astro";
 ---
 
 <Layout>
+  <VolunteerSection />
+
   <section class="aktivitets-cards">
     <h3>Hvad kan du hjælpe med?</h3>
     <article class="cards">
@@ -79,10 +83,6 @@ import FriviligCard from "../components/FriviligCard.astro";
     </article>
   </section>
 
-  <head>
-    <meta charset="UTF-8" />
-  </head>
-
   <FriviligCard />
 
   <!-- <article><Card billede="" overskrift="" detail="" /></article> -->
@@ -128,6 +128,7 @@ import FriviligCard from "../components/FriviligCard.astro";
       <label for="slide3" class="dot"></label>
     </div>
   </section>
+  <FaqSection />
 
   <style>
     .title {
