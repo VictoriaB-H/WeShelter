@@ -1,0 +1,54 @@
+---
+const { navn, alder, beskrivelse, billede } = Astro.props;
+---
+
+<article class="volunteer-card">
+  <img src={billede} alt={navn} class="volunteer-image" />
+  <div class="volunteer-info">
+    <div class="volunteer-header">
+      <h3 class="volunteer-name">{navn}</h3>
+      <span class="age">{alder} år </span>
+    </div>
+    <p class="description">{beskrivelse}</p>
+    <!-- BESKRIVELSE HER -->
+  </div>
+</article>
+
+<style>
+  .volunteer-card {
+    background: white;
+    text-align: center;
+    overflow: hidden;
+    max-width: 400px;
+    margin: auto;
+  }
+
+  .volunteer-header {
+    display: flex;
+    justify-content: space-between; /* Rykker navn og alder væk fra hinanden */
+    align-items: center;
+    width: 100%;
+  }
+
+  .volunteer-image {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    object-fit: cover; /* Sikrer, at billedet beskæres pænt */
+    align-items: start; /* Sørger for ens startposition */
+  }
+
+  .volunteer-info {
+    padding: 15px;
+  }
+
+  .age {
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    text-align: left;
+    max-width: 600px;
+  }
+</style>
