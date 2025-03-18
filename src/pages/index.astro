@@ -92,41 +92,41 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
 
   <FriviligCard />
 
-  <!-- <article><Card billede="" overskrift="" detail="" /></article> -->
-
   <section class="volunteers">
     <h2 class="title">Mød de frivillige</h2>
-
-    <div class="volunteer-grid">
-      <div class="slide">
-        <FriviligCard
-          navn="Tobias"
-          alder={25}
-          beskrivelse="Jeg er frivillig, fordi alle fortjener en chance for et bedre liv – et smil, en varm kop kaffe og nogen, der lytter, kan gøre en kæmpe forskel."
-          billede="/img/Tobias.webp"
-        />
-      </div>
-      <div class="slide">
-        <FriviligCard
-          navn="Sofia"
-          alder={32}
-          beskrivelse="Jeg underviser i yoga, fordi krop og sind fortjener ro – uanset hvor livet har ført én hen."
-          billede="/img/Sofia.webp"
-        />
-      </div>
-      <div class="slide">
-        <FriviligCard
-          navn="Ole"
-          alder={58}
-          beskrivelse="Jeg ved, hvordan det føles at stå alene. Derfor går jeg ture og lytter – for ingen skal føle sig usynlig."
-          billede="/img/Ole.webp"
-        />
-      </div>
-    </div>
     <!-- Radio buttons til navigation -->
     <input type="radio" name="slider" id="slide1" checked />
     <input type="radio" name="slider" id="slide2" />
     <input type="radio" name="slider" id="slide3" />
+
+    <div class="slider-container">
+      <div class="volunteer-grid">
+        <div class="slide">
+          <FriviligCard
+            navn="Tobias"
+            alder={25}
+            beskrivelse="Jeg er frivillig, fordi alle fortjener en chance for et bedre liv – et smil, en varm kop kaffe og nogen, der lytter, kan gøre en kæmpe forskel."
+            billede="/img/Tobias.webp"
+          />
+        </div>
+        <div class="slide">
+          <FriviligCard
+            navn="Sofia"
+            alder={32}
+            beskrivelse="Jeg underviser i yoga, fordi krop og sind fortjener ro – uanset hvor livet har ført én hen."
+            billede="/img/Sofia.webp"
+          />
+        </div>
+        <div class="slide">
+          <FriviligCard
+            navn="Ole"
+            alder={58}
+            beskrivelse="Jeg ved, hvordan det føles at stå alene. Derfor går jeg ture og lytter – for ingen skal føle sig usynlig."
+            billede="/img/Ole.webp"
+          />
+        </div>
+      </div>
+    </div>
 
     <!-- Prikker til navigation -->
     <div class="dots">
@@ -144,6 +144,18 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
   <FaqSection />
   <footer></footer>
 </Layout>
+
+  <style>
+    .volunteers {
+      margin-top: 2px;
+    }
+    .title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 50px;
+      font-weight: 400;
+      margin-top: -50px;
+    }
 
 <style>
   .title {
@@ -183,6 +195,85 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
     .volunteer-grid::-webkit-scrollbar {
       display: none; /* Skjuler scrollbar i Chrome, Safari og Opera */
     }
+    .dot {
+      display: none; /* Skjul prikker på store skærme */
+    }
+
+    /* Skjul radio buttons */
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* 📱 Mobil: Skjul scrollbar */
+    @media (max-width: 768px) {
+      .slider-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      .volunteer-grid {
+        display: flex;
+        overflow-x: auto; /* Beholder scroll-funktionen */
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        width: 100%;
+        max-width: 400px;
+        white-space: nowrap;
+        -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
+        scrollbar-width: none; /* Skjuler scrollbar i Firefox */
+      }
+
+      .volunteer-grid::-webkit-scrollbar {
+        display: none; /* Skjuler scrollbar i Chrome, Safari og Opera */
+      }
+
+      .slide {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+      }
+
+      /* Skjul radio buttons */
+      input[type="radio"] {
+        display: none;
+      }
+
+      /* Vis prikker kun på mobil */
+      .dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      /* Sørg for at radio buttons skifter billede */
+      #slide1:checked ~ .slider-container .volunteer-grid {
+        transform: translateX(0%);
+      }
+      #slide2:checked ~ .slider-container .volunteer-grid {
+        transform: translateX(-100%);
+      }
+      #slide3:checked ~ .slider-container .volunteer-grid {
+        transform: translateX(-200%);
+      }
+
+      /* Marker aktiv prik */
+      #slide1:checked ~ .dots label:nth-child(1),
+      #slide2:checked ~ .dots label:nth-child(2),
+      #slide3:checked ~ .dots label:nth-child(3) {
+        background-color: #555; /* Mørkere prik når aktiv */
+      }
+    }
+
   }
 
   .slide {
