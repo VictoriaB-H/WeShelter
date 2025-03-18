@@ -1,11 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import HeroHeader from "../components/HeroHeader.astro";
+import Formular from "../components/Formular.astro";
+import BilledGalleri from "../components/BilledGalleri.astro";
+import BilledGalleri2 from "../components/BilledGalleri2.astro";
 ---
 
 <Layout>
-  <body
-    ><Breadcrumb />
+  <body <main>
+    <HeroHeader backgroundImage="img/mad-klubber.webp" title="MAD KLUBBER" />
+
+    <Breadcrumb />
     <h1>Vær med i en madklub</h1>
 
     <div class="container1">
@@ -170,132 +176,148 @@ import Breadcrumb from "../components/Breadcrumb.astro";
         >
       </div>
     </div>
+    <section class="formular-container">
+      <div class="gallery-container"><BilledGalleri /></div>
+      <div><Formular /></div>
+      <div class="gallery-container"><BilledGalleri2 /></div>
+    </section>
   </body>
+
+  <style>
+    .formular-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 1050px) {
+      .gallery-container {
+        display: none;
+      }
+    }
+    .container1 {
+      display: flex;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .container2 {
+      text-align: center;
+      padding: 20px;
+      border-top: solid black 0.2px;
+      border-bottom: solid black 0.2px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .item {
+      display: flex;
+      align-items: start;
+      text-align: left;
+      gap: 10px;
+    }
+
+    .checkmark {
+      width: 40px;
+    }
+
+    .info {
+      max-width: 60%;
+      padding-right: 50px;
+    }
+
+    .side-info {
+      padding-top: 40px;
+    }
+
+    .point {
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      width: 40px;
+      margin-right: 10px;
+    }
+    .container {
+      width: 600px;
+    }
+
+    .location-section {
+      position: relative;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .locations {
+      max-height: 160px; /* Standard begrænset højde */
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+    }
+
+    .more-locations {
+      display: none;
+    }
+
+    .location {
+      display: flex;
+      align-items: start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Fade-effekt */
+    .fade-effect {
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    /* Skjult checkbox */
+    .toggle-checkbox {
+      display: none;
+    }
+
+    /* Style til knap */
+    .toggle-button {
+      display: block;
+      margin: 10px auto 0;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      width: 100%;
+    }
+
+    /* Når checkbox er checked */
+    .toggle-checkbox:checked ~ .locations {
+      max-height: 1000px; /* Udvider sektionen */
+    }
+
+    .toggle-checkbox:checked ~ .locations .more-locations {
+      display: block;
+    }
+
+    .toggle-checkbox:checked ~ .fade-effect {
+      opacity: 0; /* Fjerner fade-effekten */
+    }
+
+    /* Roter pilen når dropdown er åben */
+    .toggle-checkbox:checked ~ .toggle-button {
+      transform: rotate(180deg);
+    }
+  </style>
 </Layout>
-
-<style>
-  .container1 {
-    display: flex;
-    padding: 20px;
-  }
-  h1 {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 20px;
-  }
-  .container2 {
-    text-align: center;
-    padding: 20px;
-    border-top: solid black 0.2px;
-    border-bottom: solid black 0.2px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .item {
-    display: flex;
-    align-items: start;
-    text-align: left;
-    gap: 10px;
-  }
-
-  .checkmark {
-    width: 40px;
-  }
-
-  .info {
-    max-width: 60%;
-    padding-right: 50px;
-  }
-
-  .side-info {
-    padding-top: 40px;
-  }
-
-  .point {
-    display: flex;
-    align-items: center;
-  }
-
-  .icon {
-    width: 40px;
-    margin-right: 10px;
-  }
-  .container {
-    width: 600px;
-  }
-
-  .location-section {
-    position: relative;
-    padding: 20px;
-    overflow: hidden;
-  }
-
-  .locations {
-    max-height: 160px; /* Standard begrænset højde */
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-  }
-
-  .more-locations {
-    display: none;
-  }
-
-  .location {
-    display: flex;
-    align-items: start;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  /* Fade-effekt */
-  .fade-effect {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  /* Skjult checkbox */
-  .toggle-checkbox {
-    display: none;
-  }
-
-  /* Style til knap */
-  .toggle-button {
-    display: block;
-    margin: 10px auto 0;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    width: 100%;
-  }
-
-  /* Når checkbox er checked */
-  .toggle-checkbox:checked ~ .locations {
-    max-height: 1000px; /* Udvider sektionen */
-  }
-
-  .toggle-checkbox:checked ~ .locations .more-locations {
-    display: block;
-  }
-
-  .toggle-checkbox:checked ~ .fade-effect {
-    opacity: 0; /* Fjerner fade-effekten */
-  }
-
-  /* Roter pilen når dropdown er åben */
-  .toggle-checkbox:checked ~ .toggle-button {
-    transform: rotate(180deg);
-  }
-</style>
