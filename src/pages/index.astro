@@ -145,19 +145,18 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
   <footer></footer>
 </Layout>
 
-  <style>
-    .volunteers {
-      margin-top: 2px;
-    }
-    .title {
-      text-align: center;
-      font-size: 3rem;
-      margin-bottom: 50px;
-      font-weight: 400;
-      margin-top: -50px;
-    }
-
 <style>
+  .volunteers {
+    margin-top: 2px;
+  }
+  .title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-weight: 400;
+    margin-top: -50px;
+  }
+
   .title {
     text-align: center;
     font-size: 3rem;
@@ -172,108 +171,7 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-  }
-
-  .dots {
-    display: none; /* Skjul prikker på store skærme */
-  }
-
-  /* 📱 Mobil: Skjul scrollbar */
-  @media (max-width: 768px) {
-    .volunteer-grid {
-      display: flex;
-      overflow-x: auto; /* Beholder scroll-funktionen */
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      width: 100%;
-      max-width: 400px;
-      white-space: nowrap;
-      -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
-      scrollbar-width: none; /* Skjuler scrollbar i Firefox */
-    }
-
-    .volunteer-grid::-webkit-scrollbar {
-      display: none; /* Skjuler scrollbar i Chrome, Safari og Opera */
-    }
-    .dot {
-      display: none; /* Skjul prikker på store skærme */
-    }
-
-    /* Skjul radio buttons */
-    input[type="radio"] {
-      display: none;
-    }
-
-    /* 📱 Mobil: Skjul scrollbar */
-    @media (max-width: 768px) {
-      .slider-container {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-      }
-      .volunteer-grid {
-        display: flex;
-        overflow-x: auto; /* Beholder scroll-funktionen */
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        width: 100%;
-        max-width: 400px;
-        white-space: nowrap;
-        -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
-        scrollbar-width: none; /* Skjuler scrollbar i Firefox */
-      }
-
-      .volunteer-grid::-webkit-scrollbar {
-        display: none; /* Skjuler scrollbar i Chrome, Safari og Opera */
-      }
-
-      .slide {
-        flex: 0 0 100%;
-        scroll-snap-align: center;
-      }
-
-      /* Skjul radio buttons */
-      input[type="radio"] {
-        display: none;
-      }
-
-      /* Vis prikker kun på mobil */
-      .dots {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-      }
-
-      .dot {
-        height: 10px;
-        width: 10px;
-        margin: 0 5px;
-        background-color: #bbb;
-        border-radius: 50%;
-        display: inline-block;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-      }
-
-      /* Sørg for at radio buttons skifter billede */
-      #slide1:checked ~ .slider-container .volunteer-grid {
-        transform: translateX(0%);
-      }
-      #slide2:checked ~ .slider-container .volunteer-grid {
-        transform: translateX(-100%);
-      }
-      #slide3:checked ~ .slider-container .volunteer-grid {
-        transform: translateX(-200%);
-      }
-
-      /* Marker aktiv prik */
-      #slide1:checked ~ .dots label:nth-child(1),
-      #slide2:checked ~ .dots label:nth-child(2),
-      #slide3:checked ~ .dots label:nth-child(3) {
-        background-color: #555; /* Mørkere prik når aktiv */
-      }
-    }
-
+    margin-bottom: 100px;
   }
 
   .slide {
@@ -291,6 +189,7 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    display: none;
   }
 
   .dot {
@@ -366,7 +265,101 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
     justify-content: center;
   }
 
+  /* 📱 Mobil: Skjul scrollbar */
   @media (max-width: 768px) {
+    .volunteer-grid {
+      display: flex;
+      overflow-x: auto; /* Beholder scroll-funktionen */
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      width: 100%;
+      max-width: 400px;
+      white-space: nowrap;
+      -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
+      scrollbar-width: none; /* Skjuler scrollbar i Firefox */
+      margin-bottom: 10px;
+    }
+
+    .volunteer-grid::-webkit-scrollbar {
+      display: none; /* Skjuler scrollbar i Chrome, Safari og Opera */
+    }
+    .dot {
+      display: none; /* Skjul prikker på store skærme */
+    }
+
+    /* Skjul radio buttons */
+    input[type="radio"] {
+      display: none;
+    }
+
+    .slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .volunteer-grid {
+      display: flex;
+      overflow-x: auto; /* Beholder scroll-funktionen */
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      width: 100%;
+      max-width: 400px;
+      white-space: nowrap;
+      -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
+      scrollbar-width: none; /* Skjuler scrollbar i Firefox */
+    }
+
+    .volunteer-grid::-webkit-scrollbar {
+      display: none; /* Skjuler scrollbar i Chrome, Safari og Opera */
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+    }
+
+    /* Skjul radio buttons */
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Vis prikker kun på mobil */
+    .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      margin-bottom: 90px;
+    }
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    /* Sørg for at radio buttons skifter billede */
+    #slide1:checked ~ .slider-container .volunteer-grid {
+      transform: translateX(0%);
+    }
+    #slide2:checked ~ .slider-container .volunteer-grid {
+      transform: translateX(-100%);
+    }
+    #slide3:checked ~ .slider-container .volunteer-grid {
+      transform: translateX(-200%);
+    }
+
+    /* Marker aktiv prik */
+    #slide1:checked ~ .dots label:nth-child(1),
+    #slide2:checked ~ .dots label:nth-child(2),
+    #slide3:checked ~ .dots label:nth-child(3) {
+      background-color: #555; /* Mørkere prik når aktiv */
+    }
+
     h2 {
       text-align: center;
       font-family: Arial, Helvetica, sans-serif;
