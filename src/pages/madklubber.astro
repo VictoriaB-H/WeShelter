@@ -1,5 +1,109 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
 ---
 
-<Layout />
+<Layout>
+  <body
+    ><Breadcrumb />
+    <div class="container">
+      <h1>Vær med i en madklub</h1>
+
+      <section class="info">
+        <h2>Hvad er en social madklub?</h2>
+        <p>
+          Madklubberne findes på vores herberger og væresteder. Her laver
+          frivillige og brugere/beboere i fællesskab lækker og næringsrig mad,
+          der passer til små budgetter.
+        </p>
+      </section>
+
+      <section class="info">
+        <h2>Hvad skal jeg lave i en madklub?</h2>
+        <p>
+          Som frivillig i WeShelters sociale madklubber laver du mad sammen med
+          et hold af frivillige og beboere eller brugere på et af vores
+          herberger eller væresteder – efter personalet er gået hjem.
+          Madklubberne er selvkørende, og I køber ind til og laver og spiser
+          maden sammen. Formålet er ikke kun maden, men det fællesskab, der
+          opstår omkring aftenens menu. Derfor inddrages brugere/beboere aktivt
+          i planlægning og afholdelse af madklubben, og alle bidrager med det,
+          de nu kan.
+        </p>
+      </section>
+
+      <aside class="side-info">
+        <div class="point">
+          <span class="icon">🌍</span>
+          <p>Primært dansktalende</p>
+        </div>
+        <div class="point">
+          <span class="icon">⏳</span>
+          <p>Du deltager hver anden uge – en vagt varer cirka 3 timer</p>
+        </div>
+        <div class="point">
+          <span class="icon">📋</span>
+          <p>Du er moden, har en vis portion af livserfaring og mødestabil</p>
+        </div>
+      </aside>
+    </div>
+  </body>
+</Layout>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .info {
+    margin-bottom: 20px;
+  }
+
+  .side-info {
+    background-color: #eef4ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+
+  .point {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .icon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #337ab7;
+  }
+</style>
