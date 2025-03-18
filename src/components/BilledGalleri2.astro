@@ -1,0 +1,73 @@
+---
+const billeder = [
+  "/img/img9.webp",
+  "/img/img10.webp",
+  "/img/img11.webp",
+  "/img/img12.webp",
+  "/img/img13.webp",
+  "/img/img14.webp",
+  "/img/img15.webp",
+  "/img/img16.webp",
+];
+---
+
+<div class="billed-galleri">
+  {
+    billeder.map((billede, index) => (
+      <img
+        src={billede}
+        alt={`Galleri billede ${index + 1}`}
+        class={`billede-${index + 9}`}
+      />
+    ))
+  }
+</div>
+
+<style>
+  .billed-galleri {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 10px;
+    max-width: 400px;
+  }
+
+  .billed-galleri img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Placering af billeder i grid */
+  .billede-9 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  .billede-10 {
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+  }
+  .billede-11 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+  }
+  .billede-12 {
+    grid-column: 4 / 6;
+    grid-row: 3 / 5;
+  }
+  .billede-13 {
+    grid-column: 4 / 6;
+    grid-row: 5 / 7;
+  }
+  .billede-14 {
+    grid-column: 1 / 4; /* Før: 3 / 6 */
+    grid-row: 4 / 7;
+  }
+  .billede-15 {
+    grid-column: 1 / 2;
+    grid-row: 7 / 9;
+  }
+  .billede-16 {
+    grid-column: 2 / 4; /* Før: 5 / 5 */
+    grid-row: 7 / 8;
+  }
+</style>

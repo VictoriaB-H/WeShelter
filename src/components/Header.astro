@@ -1,0 +1,118 @@
+<header class="navbar">
+  <a href="index.astro" class="logo-container">
+    <img src="/img/logo.webp" alt="WeShelter logo" class="logo" />
+  </a>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#">Få hjælp</a></li>
+      <li><a href="#" class="highlight">Bliv frivillig</a></li>
+      <li><a href="#">Om</a></li>
+      <li><a href="#">Kontakt</a></li>
+      <li>
+        <a href="#" class="search-icon">
+          <img src="/img/soge.webp" alt="Søge ikon" />
+        </a>
+      </li>
+      <li><a href="#" class="button">STØT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /* Navbar */
+  header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  header.navbar.scrolled {
+    background-color: rgba(15, 23, 42, 0.85);
+  }
+
+  /* Navigation */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+
+  .nav-links li {
+    display: inline-block;
+  }
+
+  .nav-links a:not(.search-icon) {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .nav-links a:not(.search-icon):not(.button)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 1px;
+    background-color: #fe8f2c;
+    transition:
+      width 0.3s ease-in-out,
+      left 0.3s ease-in-out;
+  }
+
+  .nav-links a:not(.search-icon):hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  .nav-links a:hover {
+    color: #fe8f2c;
+  }
+
+  /* Aktiv link */
+  .nav-links a.highlight {
+    color: #fe8f2c;
+  }
+
+  /* Søgeikon */
+  .search-icon img {
+    width: 30px;
+  }
+
+  /* Knap */
+  .button {
+    background-color: #0067ff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+  }
+
+  .button:hover {
+    background-color: white;
+    color: #0067ff !important;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector("header.navbar");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 0) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  });
+</script>
