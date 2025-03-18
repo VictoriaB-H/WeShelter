@@ -1,0 +1,70 @@
+---
+import InputFelt from "../components/InputFelt.astro";
+import InteresseKnap from "../components/InteresseKnap.astro";
+import SendKnap from "../components/SendKnap.astro";
+
+const interesser = [
+  "De sociale madklubber",
+  "Netværksvenner",
+  "Økonomirådgivningen",
+  "Peer-to-peer",
+  "Aktivitetsklubber",
+  "LGBT+ venner",
+  "Yoga",
+  "Massage",
+  "Møbelhjælp",
+  "Ledelse af en aktivitet",
+];
+---
+
+<form class="formular">
+  <h3>Frivillige aktiviteter</h3>
+  <p class="beskrivelse">Hvad kunne du tænke dig at hjælpe med?</p>
+
+  <p class="label">Jeg er interesseret i:</p>
+  <div class="interesse-container">
+    {interesser.map((interesse) => <InteresseKnap label={interesse} />)}
+  </div>
+
+  <p class="label">Udfyld formular:</p>
+  <InputFelt label="Navn" name="navn" />
+  <InputFelt label="E-mail" name="email" type="email" />
+  <InputFelt label="Telefon nr." name="telefon" type="tel" />
+  <InputFelt label="Post nr." name="postnr" type="text" />
+  <InputFelt label="Kommentar" name="kommentar" type="text" />
+
+  <SendKnap />
+</form>
+
+<style>
+  .formular {
+    padding: 25px;
+    max-width: 400px;
+    border: 2px solid #893f5f;
+    color: #893f5f;
+    font-family: Arial, sans-serif;
+    margin: 0px 10px;
+  }
+
+  h3 {
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .beskrivelse {
+    font-size: 25px;
+  }
+
+  .label {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .interesse-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 30px;
+  }
+</style>

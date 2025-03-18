@@ -1,0 +1,31 @@
+<button class="send-knap">Send</button>
+
+<style>
+  .send-knap {
+    width: 100%;
+    padding: 12px;
+    background: white;
+    border: 3px solid #893f5f;
+    color: #893f5f;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.1s ease;
+  }
+
+  /* Hover */
+  .send-knap:hover {
+    box-shadow: inset 0 0 0 2px #893f5f;
+  }
+
+  /* Klik */
+  .send-knap:active {
+    background-color: #893f5f;
+    color: white;
+    transform: scale(0.98); /* Gør knappen lidt mindre ved klik */
+  }
+</style>
