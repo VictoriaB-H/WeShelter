@@ -1,4 +1,5 @@
 <div class="container2">
+  <button class="scroll-arrow scroll-arrow-left">❮</button>
   <h3>Hvad får jeg ud af at være med i en madklub?</h3>
 
   <div class="grid">
@@ -38,6 +39,7 @@
       </div>
     </div>
   </div>
+  <button class="scroll-arrow scroll-arrow-right">❯</button>
 </div>
 
 <style>
@@ -73,6 +75,10 @@
     margin-top: 10px;
   }
 
+  .scroll-arrow {
+    display: none;
+  }
+
   /* mobil */
   @media (max-width: 768px) {
     h3 {
@@ -82,21 +88,43 @@
 
     .container2 {
       padding: 10px 30px;
+      position: relative;
     }
 
     .grid {
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
     }
 
     .slide {
-      flex: 0 0 70%;
+      flex: 0 0 100%;
     }
 
     .item {
       scroll-snap-align: start;
       margin-bottom: 0px;
+    }
+
+    /* pile */
+    .scroll-arrow {
+      position: absolute;
+      top: 52%;
+      font-size: 25px;
+      opacity: 1.7;
+      background: none;
+      border: none;
+    }
+
+    .scroll-arrow-left {
+      left: 5px;
+      display: block;
+    }
+
+    .scroll-arrow-right {
+      right: 5px;
+      display: block;
     }
   }
 </style>
