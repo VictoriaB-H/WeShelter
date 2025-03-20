@@ -1,5 +1,6 @@
 ---
-const { image, hoverImage, overskrift, beskrivelse, link } = Astro.props;
+const { image, hoverImage, overskrift, beskrivelse, link, readmore } =
+  Astro.props;
 ---
 
 <article class="card">
@@ -11,6 +12,9 @@ const { image, hoverImage, overskrift, beskrivelse, link } = Astro.props;
   <details>
     <summary>+</summary>
     <p>{beskrivelse}</p>
+    <a href={link}>
+      <div>{readmore}</div>
+    </a>
   </details>
 </article>
 
@@ -99,6 +103,19 @@ const { image, hoverImage, overskrift, beskrivelse, link } = Astro.props;
     font-size: 1.3rem;
     margin-bottom: 0;
     font-weight: 100;
+  }
+
+  div {
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    margin-right: 4px;
+    margin-bottom: 5px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
   }
 
   @media (max-width: 768px) {
