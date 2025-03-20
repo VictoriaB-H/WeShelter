@@ -41,20 +41,26 @@
 <style>
   h1 {
     text-align: center;
-    font-size: 26px;
-    margin-bottom: 20px;
+    font-size: 40px;
+    margin-bottom: -60px;
+    margin-top: 70px;
   }
+  h2 {
+    margin-bottom: -8px;
+    margin-top: 30px;
+  }
+
   .container1 {
     display: flex;
-    padding: 5%;
+    padding: 100px;
   }
   .info {
-    max-width: 60%;
-    padding-right: 50px;
+    max-width: 50%;
+    padding-right: 65px;
   }
 
   .side-info {
-    padding-top: 40px;
+    padding-top: 70px;
   }
 
   .point {
@@ -64,5 +70,33 @@
   .icon {
     width: 40px;
     margin-right: 10px;
+  }
+
+  /* Mobil */
+  @media (max-width: 768px) {
+    h1 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 9px;
+      margin-top: 45px;
+    }
+    .container1 {
+      flex-direction: column;
+      padding: 25px;
+    }
+
+    .info {
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+    .side-info {
+      padding-top: 20px;
+    }
+
+    .point {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 </style>
