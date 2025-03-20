@@ -7,7 +7,7 @@ const { image, hoverImage, overskrift, beskrivelse, link } = Astro.props;
     <img src={image} alt={overskrift} class="card-image default" />
     <img src={hoverImage} alt={overskrift} class="card-image hover" />
   </a>
-  <h3>{overskrift}</h3>
+  <h2>{overskrift}</h2>
   <details>
     <summary>+</summary>
     <p>{beskrivelse}</p>
@@ -63,12 +63,7 @@ const { image, hoverImage, overskrift, beskrivelse, link } = Astro.props;
   .card:hover .card-image.hover {
     opacity: 1;
   }
-  h3 {
-    font-size: 1.3rem;
-    font-weight: 300;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-  }
+
   .card-content {
     display: flex;
     flex-direction: column;
@@ -92,11 +87,43 @@ const { image, hoverImage, overskrift, beskrivelse, link } = Astro.props;
     margin-top: 5px;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 2%;
+  }
+  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 0;
+    font-weight: 100;
+  }
+
   @media (max-width: 768px) {
     .card {
       flex: 0 0 80%;
       max-width: 100%;
       scroll-snap-align: center;
+    }
+    .cards {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      padding: 2%;
+      scrollbar-width: none; /* Skjuler scrollbar i Firefox */
+      -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
+    }
+    .cards::-webkit-scrollbar {
+      display: none;
+    }
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 0;
+      font-weight: 100;
     }
   }
 </style>
