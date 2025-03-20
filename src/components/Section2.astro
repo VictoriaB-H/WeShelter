@@ -46,10 +46,17 @@
   }
 
   .item {
-    display: flex;
-    align-items: start;
-    text-align: left;
-    gap: 10px;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+
+  @media (min-width: 900px) {
+    .item {
+      display: flex;
+      align-items: start;
+      text-align: left;
+      gap: 10px;
+    }
   }
 
   .checkmark {
