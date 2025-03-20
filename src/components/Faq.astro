@@ -3,23 +3,54 @@ const { Question, Answer } = Astro.props;
 ---
 
 <details>
-  <summary> <span class="icon">+</span> {Question}</summary>
+  <summary>
+    <span class="icon"></span>
+    <span class="question">{Question}</span>
+  </summary>
   <p>{Answer}</p>
 </details>
 
 <style>
   details {
-    padding: 10px;
-    margin: 5px 0;
+    padding: 6px;
     border-top: 1px solid #000000;
     /* border-bottom: 1px solid #000000; */
   }
 
   .icon {
-    margin-right: 10px;
+    margin-right: 15px;
     font-weight: bold;
+    transition: color 0.3s ease;
   }
+
+  /* lukket ikon*/
+  .icon::before {
+    content: "+";
+  }
+
+  /* åben ikon */
+  details[open] .icon::before {
+    content: "−";
+  }
+
+  /* hover */
+  summary:hover .icon,
+  summary:hover .question {
+    color: #0067ff;
+  }
+
+  /* åbent element */
+  details[open] summary .icon,
+  details[open] summary .question {
+    color: #0067ff;
+  }
+
   summary {
-    list-style: none;
+    cursor: pointer;
+    display: flex;
+  }
+
+  p {
+    margin-left: 25px;
   }
 </style>
