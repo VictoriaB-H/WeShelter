@@ -4,43 +4,45 @@ import Location from "../components/Location.astro";
 
 <div class="container3">
   <div class="location-section">
-    <Location
-      strong="NABO Center Amager i København."
-      tekst="NABO er et socialpsykiatrisk værested. Vi mødes i madklubben tirsdage fra kl. 16.00 til ca. 19.15. "
-    />
-    <Location
-      strong="Sporsløjfen på Østerbro i København."
-      tekst="er et herberg for hjemløse unge mellem 18-30 år. Vi mødes i madklubben onsdage fra kl. 17.00 til ca. 20.15. "
-    />
-    <div class="more-locations">
+    <div class="locations">
       <Location
-        strong="Pegasus på Enghavevej i København."
-        tekst="Pegasus er et mindre socialpsykiatrisk værested. Madklubben afholdes onsdage fra kl. 17.00 til ca. 20.15."
+        strong="NABO Center Amager i København."
+        tekst="NABO er et socialpsykiatrisk værested. Vi mødes i madklubben tirsdage fra kl. 16.00 til ca. 19.15. "
       />
       <Location
-        strong="Café Klare på Vesterbro i København."
-        tekst="Café Klare er en natcafé for hjemløse og udsatte kvinder. Vi mødes i madklubben onsdage fra kl. 17.00 til ca. 20.15."
+        strong="Sporsløjfen på Østerbro i København."
+        tekst="er et herberg for hjemløse unge mellem 18-30 år. Vi mødes i madklubben onsdage fra kl. 17.00 til ca. 20.15. "
       />
-      <Location
-        strong="Offsides Sociale Haver ved Bispebjerg Hospital."
-        tekst="Et udendørs aktivitets- og samværstilbud for socialt udsatte og psykisk sårbare. Vi mødes i madklubben onsdage fra kl. 17 til ca. 20.15."
-      />
-      <Location
-        strong="Angsarkirken i Nordvest."
-        tekst="Frivillige og beboere fra lokalområdet mødes og laver mad sammen. Madklubben mødes torsdage fra kl. 16.30 til ca. 19.45."
-      />
-      <Location
-        strong="De skæve boliger Toften i Brønshøj."
-        tekst="Vi mødes i madklubben torsdage fra kl. 12.00 til ca. 15.30."
-      />
-      <Location
-        strong="De skæve boliger Hammelstrupvej i København SV."
-        tekst="Vi mødes i madklubben torsdage fra kl. 11.00 til ca. 14.30."
-      />
-      <Location
-        strong="De skæve boliger Oliefabriksvej på Amager."
-        tekst="Vi mødes i madklubben torsdage fra kl. 11.00 til ca. 14.30."
-      />
+      <div class="more-locations">
+        <Location
+          strong="Pegasus på Enghavevej i København."
+          tekst="Pegasus er et mindre socialpsykiatrisk værested. Madklubben afholdes onsdage fra kl. 17.00 til ca. 20.15."
+        />
+        <Location
+          strong="Café Klare på Vesterbro i København."
+          tekst="Café Klare er en natcafé for hjemløse og udsatte kvinder. Vi mødes i madklubben onsdage fra kl. 17.00 til ca. 20.15."
+        />
+        <Location
+          strong="Offsides Sociale Haver ved Bispebjerg Hospital."
+          tekst="Et udendørs aktivitets- og samværstilbud for socialt udsatte og psykisk sårbare. Vi mødes i madklubben onsdage fra kl. 17 til ca. 20.15."
+        />
+        <Location
+          strong="Angsarkirken i Nordvest."
+          tekst="Frivillige og beboere fra lokalområdet mødes og laver mad sammen. Madklubben mødes torsdage fra kl. 16.30 til ca. 19.45."
+        />
+        <Location
+          strong="De skæve boliger Toften i Brønshøj."
+          tekst="Vi mødes i madklubben torsdage fra kl. 12.00 til ca. 15.30."
+        />
+        <Location
+          strong="De skæve boliger Hammelstrupvej i København SV."
+          tekst="Vi mødes i madklubben torsdage fra kl. 11.00 til ca. 14.30."
+        />
+        <Location
+          strong="De skæve boliger Oliefabriksvej på Amager."
+          tekst="Vi mødes i madklubben torsdage fra kl. 11.00 til ca. 14.30."
+        />
+      </div>
     </div>
   </div>
   <input type="checkbox" id="toggle" class="toggle-checkbox" />
@@ -60,7 +62,7 @@ import Location from "../components/Location.astro";
   }
 
   .locations {
-    max-height: 160px; /* Standard begrænset højde */
+    max-height: 160px;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
   }
