@@ -7,7 +7,7 @@ import BilledGalleri from "../components/BilledGalleri.astro";
 import BilledGalleri2 from "../components/BilledGalleri2.astro";
 import Section1 from "../components/Section1.astro";
 import Section2 from "../components/Section2.astro";
-import Location from "../components/Location.astro";
+import Section3 from "../components/Section3.astro";
 ---
 
 <Layout>
@@ -18,139 +18,25 @@ import Location from "../components/Location.astro";
       <Breadcrumb />
       <Section1 />
       <Section2 />
-
-      <div class="container3">
-        <div class="location-section">
-          <input type="checkbox" id="toggle" class="toggle-checkbox" />
-          <Location
-            strong="NABO Center Amager i København."
-            tekst="NABO er et socialpsykiatrisk værested. Vi mødes i madklubben tirsdage fra kl. 16.00 til ca. 19.15. "
-          />
-          <Location
-            strong="Sporsløjfen på Østerbro i København."
-            tekst="er et herberg for hjemløse unge mellem 18-30 år. Vi mødes i madklubben onsdage fra kl. 17.00 til ca. 20.15. "
-          />
-          <div class="more-locations">
-            <Location
-              strong="Pegasus på Enghavevej i København."
-              tekst="Pegasus er et mindre socialpsykiatrisk værested. Madklubben afholdes onsdage fra kl. 17.00 til ca. 20.15."
-            />
-            <Location
-              strong="Café Klare på Vesterbro i København."
-              tekst="Café Klare er en natcafé for hjemløse og udsatte kvinder. Vi mødes i madklubben onsdage fra kl. 17.00 til ca. 20.15."
-            />
-            <Location
-              strong="Offsides Sociale Haver ved Bispebjerg Hospital."
-              tekst="Et udendørs aktivitets- og samværstilbud for socialt udsatte og psykisk sårbare. Vi mødes i madklubben onsdage fra kl. 17 til ca. 20.15."
-            />
-            <Location
-              strong="Angsarkirken i Nordvest."
-              tekst="Frivillige og beboere fra lokalområdet mødes og laver mad sammen. Madklubben mødes torsdage fra kl. 16.30 til ca. 19.45."
-            />
-            <Location
-              strong="De skæve boliger Toften i Brønshøj."
-              tekst="Vi mødes i madklubben torsdage fra kl. 12.00 til ca. 15.30."
-            />
-            <Location
-              strong="De skæve boliger Hammelstrupvej i København SV."
-              tekst="Vi mødes i madklubben torsdage fra kl. 11.00 til ca. 14.30."
-            />
-            <Location
-              strong="De skæve boliger Oliefabriksvej på Amager."
-              tekst="Vi mødes i madklubben torsdage fra kl. 11.00 til ca. 14.30."
-            />
-          </div>
-        </div>
-
-        <div class="fade-effect"></div>
-
-        <label for="toggle" class="toggle-button"
-          ><img src="img/Pil.svg" alt="" /></label
-        >
-      </div>
+      <Section3 />
     </main>
     <section class="formular-container">
       <div class="gallery-container"><BilledGalleri /></div>
       <div><Formular /></div>
       <div class="gallery-container"><BilledGalleri2 /></div>
     </section>
-
-    <style>
-      .formular-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      @media (max-width: 1050px) {
-        .gallery-container {
-          display: none;
-        }
-      }
-
-      .location-section {
-        position: relative;
-        padding: 20px;
-        overflow: hidden;
-      }
-
-      .locations {
-        max-height: 160px; /* Standard begrænset højde */
-        overflow: hidden;
-        transition: max-height 0.5s ease-in-out;
-      }
-
-      .more-locations {
-        display: none;
-      }
-
-      /* Fade-effekt */
-      .fade-effect {
-        position: absolute;
-        bottom: 50px;
-        left: 0;
-        width: 100%;
-        height: 50px;
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
-        pointer-events: none;
-        transition: opacity 0.3s ease-in-out;
-      }
-
-      /* Skjult checkbox */
-      .toggle-checkbox {
-        display: none;
-      }
-
-      /* Style til knap */
-      .toggle-button {
-        display: block;
-        margin: 10px auto 0;
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        text-align: center;
-        transition: transform 0.3s ease-in-out;
-        width: 100%;
-      }
-
-      /* Når checkbox er checked */
-      .toggle-checkbox:checked ~ .locations {
-        max-height: 1000px; /* Udvider sektionen */
-      }
-
-      .toggle-checkbox:checked ~ .locations .more-locations {
-        display: block;
-      }
-
-      .toggle-checkbox:checked ~ .fade-effect {
-        opacity: 0; /* Fjerner fade-effekten */
-      }
-
-      /* Roter pilen når dropdown er åben */
-      .toggle-checkbox:checked ~ .toggle-button {
-        transform: rotate(180deg);
-      }
-    </style>
   </body></Layout
 >
+<style>
+  .formular-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 1050px) {
+    .gallery-container {
+      display: none;
+    }
+  }
+</style>
