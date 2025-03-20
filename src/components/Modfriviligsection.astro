@@ -3,7 +3,7 @@ import FriviligCard from "../components/FriviligCard.astro";
 ---
 
 <section class="volunteers">
-  <h3 class="title">Mød de frivillige</h3>
+  <h2 class="title">Mød de frivillige</h2>
   <!-- Radio buttons til navigation -->
   <input type="radio" name="slider" id="slide1" checked />
   <input type="radio" name="slider" id="slide2" />
@@ -54,12 +54,10 @@ import FriviligCard from "../components/FriviligCard.astro";
   }
 
   .title {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 400;
-
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
   }
 
   /* 🖥️ Standard: Grid layout på store skærme */
@@ -259,13 +257,6 @@ import FriviligCard from "../components/FriviligCard.astro";
     #slide3:checked ~ .dots label:nth-child(3) {
       background-color: #555; /* Mørkere prik når aktiv */
     }
-
-    h2 {
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 0;
-    }
   }
   /* 📱 Mobil: Skjul scrollbar */
   @media (max-width: 768px) {
@@ -377,13 +368,6 @@ import FriviligCard from "../components/FriviligCard.astro";
     #slide2:checked ~ .dots label:nth-child(2),
     #slide3:checked ~ .dots label:nth-child(3) {
       background-color: #555; /* Mørkere prik når aktiv */
-    }
-
-    h3 {
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 0;
     }
   }
 </style>
