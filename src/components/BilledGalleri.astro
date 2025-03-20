@@ -27,7 +27,6 @@ const billeder = [
   .billed-galleri {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-
     gap: 10px;
     max-width: 400px;
   }
@@ -36,93 +35,6 @@ const billeder = [
     width: 100%;
     height: auto;
   }
-
-  /* **************************************************** */
-
-  @keyframes wavy-motion {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .billed-galleri img {
-    animation: wavy-motion 3s infinite ease-in-out;
-  }
-
-  /* **************************************************** */
-
-  /* @keyframes slow-tilt {
-    0%,
-    100% {
-      transform: rotate(0deg);
-    }
-    50% {
-      transform: rotate(5deg);
-    }
-  }
-
-  .billed-galleri img {
-    animation: slow-tilt 6s infinite ease-in-out;
-  } */
-
-  /* **************************************************** */
-
-  /* @keyframes micro-move {
-    0%,
-    100% {
-      transform: translateY(0) rotate(0deg);
-    }
-    25% {
-      transform: translateY(-2px) rotate(-0.5deg);
-    }
-    50% {
-      transform: translateY(0) rotate(0.5deg);
-    }
-    75% {
-      transform: translateY(2px) rotate(-0.5deg);
-    }
-  }
-
-  .billed-galleri img {
-    animation: micro-move 7s infinite ease-in-out;
-  } */
-
-  /* **************************************************** */
-
-  /* @keyframes bounce-slow {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-5px);
-    }
-  }
-
-  .billed-galleri img {
-    animation: bounce-slow 6s infinite ease-in-out;
-  } */
-
-  /* **************************************************** */
-
-  /* @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02); 
-  }
-}
-
-.billed-galleri img {
-  animation: pulse 4s infinite ease-in-out;
-} */
-
-  /* **************************************************** */
 
   /* Placering af billeder i grid */
   .billede-1 {
