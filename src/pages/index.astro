@@ -10,6 +10,7 @@ import BilledGalleri from "../components/BilledGalleri.astro";
 import BilledGalleri2 from "../components/BilledGalleri2.astro";
 import Modfriviligsection from "../components/Modfriviligsection.astro";
 import "../css/global.css";
+import Card2 from "../components/Card2.astro";
 ---
 
 <Layout>
@@ -18,79 +19,7 @@ import "../css/global.css";
 
   <VolunteerSection />
 
-  <section class="aktivitets-cards">
-    <h3>Hvad kan du hjælpe med?</h3>
-    <article class="cards">
-      <Card
-        image="/img/2.svg"
-        hoverImage="/img/madklubber.png"
-        overskrift="Madklub"
-        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
-        link="/madklubber"
-      />
-      <Card
-        image="/img/1.svg"
-        hoverImage="/img/netværksvenner.png"
-        overskrift="Netværksvenner"
-        beskrivelse="Som netværksven støtter du en, der føler sig alene, gennem samtaler og fælles aktiviteter. En lille indsats kan gøre en stor forskel – måske får du endda en ny venfor livet."
-        link="/madklubber"
-      /><Card
-        image="/img/3.svg"
-        hoverImage="/img/Økonomi.png"
-        overskrift="Økonomirådgivning"
-        beskrivelse="Brug din viden til at hjælpe andre med at få styr på budget, gæld og økonomiske udfordringer. Som økonomirådgiver giver du støtte og skaber overblik, så folk kan få en tryggere hverdag."
-        link="/madklubber"
-      /><Card
-        image="/img/4.svg"
-        hoverImage="/img/Peer-to-peer.png"
-        overskrift="Peer to peer"
-        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
-        link="/madklubber"
-      />
-      <Card
-        image="/img/5.svg"
-        hoverImage="/img/Aktivitetsklubber.png"
-        overskrift="Aktivitetsklubber"
-        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
-        link="/madklubber"
-      />
-      <Card
-        image="/img/6.svg"
-        hoverImage="/img/LGBTvenner.png"
-        overskrift="LGBT+ venner"
-        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
-        link="/madklubber"
-      />
-      <Card
-        image="/img/7.svg"
-        hoverImage="/img/Yoga.png"
-        overskrift="Yoga"
-        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
-        link="/madklubber"
-      />
-      <Card
-        image="/img/8.svg"
-        hoverImage="/img/Massage.png"
-        overskrift="Massage"
-        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
-        link="/madklubber"
-      />
-      <Card
-        image="/img/9.svg"
-        hoverImage="/img/Møbelhjælp.png"
-        overskrift="Møbelhjælp"
-        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
-        link="/madklubber"
-      />
-      <Card
-        image="/img/10.svg"
-        hoverImage="/img/Ledelse.png"
-        overskrift="Ledelse af en aktivitet"
-        beskrivelse="I vores sociale madklubber laver du lækker mad i fællesskab med andre frivillige og socialt udsatte."
-        link="/madklubber"
-      />
-    </article>
-  </section>
+  <Card2 />
 
   <Modfriviligsection />
 
@@ -105,43 +34,11 @@ import "../css/global.css";
 </Layout>
 
 <style>
-  h3 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 0;
-    text-align: center;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 2%;
-  }
-  .aktivitets-cards {
-    margin: 70px;
-  }
-
   .formular-container {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px 0;
-  }
-
-  @media (max-width: 768px) {
-    .cards {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 10px;
-      padding: 2%;
-      scrollbar-width: none; /* Skjuler scrollbar i Firefox */
-      -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
-    }
-    .cards::-webkit-scrollbar {
-      display: none;
-    }
   }
 
   @media (max-width: 1050px) {
