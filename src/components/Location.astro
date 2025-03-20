@@ -1,0 +1,24 @@
+---
+const { strong, tekst } = Astro.props;
+---
+
+<div class="location">
+  <img src="img/Lokation.svg" class="icon" alt="Lokation" />
+  <p>
+    <strong>{strong}</strong>
+    {tekst}
+  </p>
+</div>
+
+<style>
+  .location {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .icon {
+    width: 40px;
+    margin-right: 10px;
+  }
+</style>
