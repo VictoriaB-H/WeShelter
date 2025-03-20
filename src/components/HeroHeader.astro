@@ -15,11 +15,24 @@ const { backgroundImage, title } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover; /* Standardstørrelse på større skærme */
+    background-repeat: no-repeat;
   }
 
   .hero-header h1 {
     color: white;
     font-size: 7rem;
     font-family: Arial, Helvetica, sans-serif;
+  }
+  @media (max-width: 768px) {
+    .hero-header h1 {
+      color: white;
+      font-size: 3rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .hero-header {
+      background-position: 65% center; /* Rykker billedet lidt til venstre */
+      height: 380px;
+    }
   }
 </style>

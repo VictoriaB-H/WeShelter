@@ -2,8 +2,12 @@
   <a href="index.astro" class="logo-container">
     <img src="/img/logo.webp" alt="WeShelter logo" class="logo" />
   </a>
-
-  <nav>
+  <button class="burger-menu" id="burger-menu" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="nav-container" id="nav-container">
     <ul class="nav-links">
       <li><a href="#">Få hjælp</a></li>
       <li><a href="#" class="highlight">Bliv frivillig</a></li>
@@ -20,7 +24,6 @@
 </header>
 
 <style>
-  /* Navbar */
   header.navbar {
     display: flex;
     justify-content: space-between;
@@ -37,7 +40,11 @@
     background-color: rgba(15, 23, 42, 0.85);
   }
 
-  /* Navigation */
+  .nav-container {
+    display: flex;
+    align-items: center;
+  }
+
   .nav-links {
     display: flex;
     align-items: center;
@@ -78,17 +85,14 @@
     color: #fe8f2c;
   }
 
-  /* Aktiv link */
   .nav-links a.highlight {
     color: #fe8f2c;
   }
 
-  /* Søgeikon */
   .search-icon img {
     width: 30px;
   }
 
-  /* Knap */
   .button {
     background-color: #0067ff;
     padding: 10px 20px;
@@ -102,17 +106,92 @@
     background-color: white;
     color: #0067ff !important;
   }
+
+  .burger-menu {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .logo-container {
+      z-index: 1100;
+    }
+
+    .burger-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .burger-menu span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      transition: 0.3s;
+    }
+
+    .nav-container {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      max-height: 295px;
+      background-color: rgba(15, 23, 42, 0.85);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 70px;
+      transition: top 0.3s ease-in-out;
+      z-index: 900;
+      overflow: hidden;
+    }
+
+    .nav-container.open {
+      top: 0;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      font-size: 20px;
+      color: white;
+    }
+
+    /* Burger-menu animation */
+    .burger-menu.open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-menu.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .burger-menu.open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
 </style>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", function () {
-    const navbar = document.querySelector("header.navbar");
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 0) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".navbar");
+    const burgerMenu = document.getElementById("burger-menu");
+    const navContainer = document.getElementById("nav-container");
+
+    window.addEventListener("scroll", () =>
+      navbar.classList.toggle("scrolled", window.scrollY > 0)
+    );
+
+    burgerMenu.addEventListener("click", () => {
+      navContainer.classList.toggle("open");
+      burgerMenu.classList.toggle("open");
     });
   });
 </script>
