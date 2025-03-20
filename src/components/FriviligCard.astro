@@ -7,7 +7,7 @@ const { navn, alder, beskrivelse, billede } = Astro.props;
   <div class="volunteer-info">
     <div class="volunteer-header">
       <h3 class="volunteer-name">{navn}</h3>
-      <span class="age">{alder} </span>
+      <span class="age">{alder} År </span>
     </div>
     <p class="description">{beskrivelse}</p>
     <!-- BESKRIVELSE HER -->
@@ -38,17 +38,7 @@ const { navn, alder, beskrivelse, billede } = Astro.props;
     align-items: start; /* Sørger for ens startposition */
   }
 
-  .volunteer-info {
-    padding: 15px;
-  }
-
   .age {
     font-weight: bold;
-  }
-
-  .description {
-    font-size: 1.2rem;
-    text-align: left;
-    max-width: 600px;
   }
 </style>

@@ -8,6 +8,7 @@ import HeroHeader from "../components/HeroHeader.astro";
 import Formular from "../components/Formular.astro";
 import BilledGalleri from "../components/BilledGalleri.astro";
 import BilledGalleri2 from "../components/BilledGalleri2.astro";
+import Modfriviligsection from "../components/Modfriviligsection.astro";
 ---
 
 <Layout>
@@ -90,51 +91,7 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
     </article>
   </section>
 
-  <FriviligCard />
-
-  <section class="volunteers">
-    <h2 class="title">Mød de frivillige</h2>
-    <!-- Radio buttons til navigation -->
-    <input type="radio" name="slider" id="slide1" checked />
-    <input type="radio" name="slider" id="slide2" />
-    <input type="radio" name="slider" id="slide3" />
-
-    <div class="slider-container">
-      <div class="volunteer-grid">
-        <div class="slide">
-          <FriviligCard
-            navn="Tobias"
-            alder={25}
-            beskrivelse="Jeg er frivillig, fordi alle fortjener en chance for et bedre liv – et smil, en varm kop kaffe og nogen, der lytter, kan gøre en kæmpe forskel."
-            billede="/img/Tobias.webp"
-          />
-        </div>
-        <div class="slide">
-          <FriviligCard
-            navn="Sofia"
-            alder={32}
-            beskrivelse="Jeg underviser i yoga, fordi krop og sind fortjener ro – uanset hvor livet har ført én hen."
-            billede="/img/Sofia.webp"
-          />
-        </div>
-        <div class="slide">
-          <FriviligCard
-            navn="Ole"
-            alder={58}
-            beskrivelse="Jeg ved, hvordan det føles at stå alene. Derfor går jeg ture og lytter – for ingen skal føle sig usynlig."
-            billede="/img/Ole.webp"
-          />
-        </div>
-      </div>
-    </div>
-
-    <!-- Prikker til navigation -->
-    <div class="dots">
-      <label for="slide1" class="dot"></label>
-      <label for="slide2" class="dot"></label>
-      <label for="slide3" class="dot"></label>
-    </div>
-  </section>
+  <Modfriviligsection />
 
   <section class="formular-container">
     <div class="gallery-container"><BilledGalleri /></div>
@@ -147,103 +104,6 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
 </Layout>
 
 <style>
-  .volunteers {
-    margin-top: 2px;
-  }
-  .title {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 50px;
-    font-weight: 400;
-    margin-top: -50px;
-  }
-
-  .title {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 400;
-  }
-
-  /* 🖥️ Standard: Grid layout på store skærme */
-  .volunteer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 100px;
-  }
-
-  .slide {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-  }
-
-  /* Skjul radio buttons */
-  input[type="radio"] {
-    display: none;
-  }
-
-  /* Vis prikker kun på mobil */
-  .dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    display: none;
-  }
-
-  .dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #b5b1b1;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-  }
-  /* Skift slide ved klik på prikker */
-  #slide1:checked ~ .volunteer-grid {
-    transform: translateX(0%);
-  }
-  #slide2:checked ~ .volunteer-grid {
-    transform: translateX(-100%);
-  }
-  #slide3:checked ~ .volunteer-grid {
-    transform: translateX(-200%);
-  }
-
-  /* Marker aktiv prik */
-  #slide1:checked ~ .dots label:nth-child(1),
-  #slide2:checked ~ .dots label:nth-child(2),
-  #slide3:checked ~ .dots label:nth-child(3) {
-    background-color: #555; /* Mørkere prik når aktiv */
-  }
-
-  /* Sørg for at teksten vises ordentligt */
-  .volunteer-card {
-    width: 90%;
-    max-width: 380px;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: auto;
-  }
-
-  .volunteer-info {
-    padding: 15px;
-    text-align: center;
-    width: 100%;
-  }
-
-  .description {
-    font-size: 1rem;
-    text-align: center;
-    max-width: 100%;
-    padding: 10px;
-  }
-
   h3 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2.5rem;
@@ -267,107 +127,7 @@ import BilledGalleri2 from "../components/BilledGalleri2.astro";
     margin: 20px 0;
   }
 
-  /* 📱 Mobil: Skjul scrollbar */
   @media (max-width: 768px) {
-    .volunteer-grid {
-      display: flex;
-      overflow-x: auto; /* Beholder scroll-funktionen */
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      width: 100%;
-      max-width: 400px;
-      white-space: nowrap;
-      -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
-      scrollbar-width: none; /* Skjuler scrollbar i Firefox */
-      margin-bottom: 10px;
-    }
-
-    .volunteer-grid::-webkit-scrollbar {
-      display: none; /* Skjuler scrollbar i Chrome, Safari og Opera */
-    }
-    .dot {
-      display: none; /* Skjul prikker på store skærme */
-    }
-
-    /* Skjul radio buttons */
-    input[type="radio"] {
-      display: none;
-    }
-
-    .slider-container {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
-    }
-    .volunteer-grid {
-      display: flex;
-      overflow-x: auto; /* Beholder scroll-funktionen */
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      width: 100%;
-      max-width: 400px;
-      white-space: nowrap;
-      -ms-overflow-style: none; /* Skjuler scrollbar i Internet Explorer og Edge */
-      scrollbar-width: none; /* Skjuler scrollbar i Firefox */
-    }
-
-    .volunteer-grid::-webkit-scrollbar {
-      display: none; /* Skjuler scrollbar i Chrome, Safari og Opera */
-    }
-
-    .slide {
-      flex: 0 0 100%;
-      scroll-snap-align: center;
-    }
-
-    /* Skjul radio buttons */
-    input[type="radio"] {
-      display: none;
-    }
-
-    /* Vis prikker kun på mobil */
-    .dots {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-      margin-bottom: 90px;
-    }
-
-    .dot {
-      height: 10px;
-      width: 10px;
-      margin: 0 5px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
-    }
-
-    /* Sørg for at radio buttons skifter billede */
-    #slide1:checked ~ .slider-container .volunteer-grid {
-      transform: translateX(0%);
-    }
-    #slide2:checked ~ .slider-container .volunteer-grid {
-      transform: translateX(-100%);
-    }
-    #slide3:checked ~ .slider-container .volunteer-grid {
-      transform: translateX(-200%);
-    }
-
-    /* Marker aktiv prik */
-    #slide1:checked ~ .dots label:nth-child(1),
-    #slide2:checked ~ .dots label:nth-child(2),
-    #slide3:checked ~ .dots label:nth-child(3) {
-      background-color: #555; /* Mørkere prik når aktiv */
-    }
-
-    h2 {
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.5rem;
-      margin-bottom: 0;
-    }
     .cards {
       display: flex;
       overflow-x: auto;
