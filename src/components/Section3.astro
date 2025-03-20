@@ -4,7 +4,6 @@ import Location from "../components/Location.astro";
 
 <div class="container3">
   <div class="location-section">
-    <input type="checkbox" id="toggle" class="toggle-checkbox" />
     <Location
       strong="NABO Center Amager i København."
       tekst="NABO er et socialpsykiatrisk værested. Vi mødes i madklubben tirsdage fra kl. 16.00 til ca. 19.15. "
@@ -44,8 +43,9 @@ import Location from "../components/Location.astro";
       />
     </div>
   </div>
+  <input type="checkbox" id="toggle" class="toggle-checkbox" />
 
-  <div class="fade-effect"></div>
+  <!-- <div class="fade-effect"></div> -->
 
   <label for="toggle" class="toggle-button"
     ><img src="img/Pil.svg" alt="Pil" /></label
@@ -83,7 +83,7 @@ import Location from "../components/Location.astro";
 
   /* Skjult checkbox */
   .toggle-checkbox {
-    display: none;
+    /* display: none; */
   }
 
   /* Style til knap */
@@ -101,16 +101,16 @@ import Location from "../components/Location.astro";
 
   /* Når checkbox er checked */
   .toggle-checkbox:checked ~ .locations {
-    max-height: 1000px; /* Udvider sektionen */
+    height: 1000px; /* Udvider sektionen */
   }
 
   .toggle-checkbox:checked ~ .locations .more-locations {
     display: block;
   }
 
-  .toggle-checkbox:checked ~ .fade-effect {
+  /* .toggle-checkbox:checked ~ .fade-effect {
     opacity: 0; /* Fjerner fade-effekten */
-  }
+  /* } */
 
   /* Roter pilen når dropdown er åben */
   .toggle-checkbox:checked ~ .toggle-button {
