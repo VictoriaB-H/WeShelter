@@ -60,21 +60,58 @@ import Button from "../components/Button.astro";
     width: 100%;
   }
 
-  @media (min-width: 800px) {
-    .volunteer-section {
-      max-width: 1000px;
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+  }
+
+  .volunteer-section {
+    max-width: 1000px;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+  }
+
+  .text {
+    max-width: 100%;
+    margin-left: 0; /* Fjerner margin for større skærme */
+  }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: left;
+      margin: 30px;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-top: 0;
+      margin: 30px;
     }
 
     .content {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .text {
-      max-width: 100%;
-      margin-left: 0; /* Fjerner margin for større skærme */
+    p {
+      font-size: 16px;
+      line-height: 2.2;
+      margin: 30px;
+    }
+
+    .image {
+      width: 100%;
     }
   }
 </style>

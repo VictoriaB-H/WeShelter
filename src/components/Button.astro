@@ -12,12 +12,19 @@
     transition:
       background-color 0.3s,
       color 0.3s;
-    margin-top: 20px;
+    margin-left: 30px;
+    margin-top: 0;
   }
 
   .tilmeld-knap:hover {
     background-color: white;
     color: #276ef1;
     border: 2px solid #276ef1;
+  }
+
+  @media (min-width: 768px) {
+    .tilmeld-knap {
+      margin-left: 0;
+    }
   }
 </style>
