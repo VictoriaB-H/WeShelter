@@ -1,299 +1,156 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import HeroHeader from "../components/HeroHeader.astro";
+import Formular from "../components/Formular.astro";
+import BilledGalleri from "../components/BilledGalleri.astro";
+import BilledGalleri2 from "../components/BilledGalleri2.astro";
+import Section1 from "../components/Section1.astro";
+import Section2 from "../components/Section2.astro";
+import Location from "../components/Location.astro";
 ---
 
 <Layout>
-  <body
-    ><Breadcrumb />
-    <h1>Vær med i en madklub</h1>
+  <body>
+    <main>
+      <HeroHeader backgroundImage="img/mad-klubber.webp" title="MAD KLUBBER" />
 
-    <div class="container1">
-      <section class="info">
-        <h2>Hvad er en social madklub?</h2>
-        <p>
-          Madklubberne findes på vores herberger og væresteder. Her laver
-          frivillige og brugere/beboere i fællesskab lækker og næringsrig mad,
-          der passer til små budgetter.
-        </p>
+      <Breadcrumb />
+      <Section1 />
+      <Section2 />
 
-        <section>
-          <h2>Hvad skal jeg lave i en madklub?</h2>
-          <p>
-            Som frivillig i WeShelters sociale madklubber laver du mad sammen
-            med et hold af frivillige og beboere eller brugere på et af vores
-            herberger eller væresteder – efter personalet er gået hjem.
-            Madklubberne er selvkørende, og I køber ind til og laver og spiser
-            maden sammen. Formålet er ikke kun maden, men det fællesskab, der
-            opstår omkring aftenens menu. Derfor inddrages brugere/beboere
-            aktivt i planlægning og afholdelse af madklubben, og alle bidrager
-            med det, de nu kan.
-          </p>
-        </section>
-      </section>
-
-      <aside class="side-info">
-        <div class="point">
-          <img src="img/Globus.svg" class="icon" alt="Hvilket sprog?" />
-          <p>Primært dansktalende</p>
-        </div>
-        <div class="point">
-          <img src="img/Ur.svg" class="icon" alt="Hvor lang tid?" />
-          <p>Du deltager hver anden uge – en vagt varer cirka 3 timer</p>
-        </div>
-        <div class="point">
-          <img src="img/Tavle.svg" class="icon" alt="HVad skal du kunne?" />
-          <p>Du er moden, har en vis portion af livserfaring og mødestabil</p>
-        </div>
-      </aside>
-    </div>
-
-    <div class="container2">
-      <h2>Hvad får jeg ud af at være med i en madklub?</h2>
-      <div class="grid">
-        <div class="item">
-          <img src="img/checkbox.svg" class="checkmark" alt="checkmark" />
-          <p>
-            Et udfordrende frivilligjob, hvor du kan kombinere dine interesser
-            for madlavning og socialt arbejde
-          </p>
-        </div>
-        <div class="item">
-          <img src="img/checkbox.svg" class="checkmark" alt="checkmark" />
-          <p>
-            Mulighed for at være med i et fællesskab af motiverede frivillige
-          </p>
-        </div>
-        <div class="item">
-          <img src="img/checkbox.svg" class="checkmark" alt="checkmark" />
-          <p>Sparring på din indsats i madklubben og udviklingsmuligheder</p>
-        </div>
-        <div class="item">
-          <img src="img/checkbox.svg" class="checkmark" alt="checkmark" />
-          <p>Kendskab til en spændende målgruppe</p>
-        </div>
-        <div class="item">
-          <img src="img/checkbox.svg" class="checkmark" alt="checkmark" />
-          <p>
-            Mulighed for at være med i et fællesskab af motiverede frivillige
-          </p>
-        </div>
-        <div class="item">
-          <img src="img/checkbox.svg" class="checkmark" alt="checkmark" />
-
-          <p>Dokumentation for dit frivillige arbejde efter et år</p>
-        </div>
-      </div>
-    </div>
-    <div class="container3">
-      <div class="location-section">
-        <input type="checkbox" id="toggle" class="toggle-checkbox" />
-
-        <div class="locations">
-          <div class="location">
-            <img src="img/Lokation.svg" class="icon" alt="Lokation" />
-            <p>
-              <strong>NABO Center Amager i København.</strong> NABO er et socialpsykiatrisk
-              værested. Vi mødes i madklubben tirsdage fra kl. 16.00 til ca. 19.15.
-            </p>
-          </div>
-          <div class="location">
-            <img src="img/Lokation.svg" class="icon" alt="Lokation" />
-            <p>
-              <strong>Sporsløjfen på Østerbro i København.</strong> Sporsløjfen er
-              et herberg for hjemløse unge mellem 18-30 år. Vi mødes i madklubben
-              onsdage fra kl. 17.00 til ca. 20.15.
-            </p>
-          </div>
-
+      <div class="container3">
+        <div class="location-section">
+          <input type="checkbox" id="toggle" class="toggle-checkbox" />
+          <Location
+            strong="NABO Center Amager i København."
+            tekst="NABO er et socialpsykiatrisk værested. Vi mødes i madklubben tirsdage fra kl. 16.00 til ca. 19.15. "
+          />
+          <Location
+            strong="Sporsløjfen på Østerbro i København."
+            tekst="er et herberg for hjemløse unge mellem 18-30 år. Vi mødes i madklubben onsdage fra kl. 17.00 til ca. 20.15. "
+          />
           <div class="more-locations">
-            <div class="location">
-              <img src="img/Lokation.svg" class="icon" alt="Lokation" />
-              <p>
-                <strong>Pegasus på Enghavevej i København.</strong> Pegasus er et
-                mindre socialpsykiatrisk værested. Madklubben afholdes onsdage fra
-                kl. 17.00 til ca. 20.15.
-              </p>
-            </div>
-            <div class="location">
-              <img src="img/Lokation.svg" class="icon" alt="Lokation" />
-              <p>
-                <strong>Café Klare på Vesterbro i København.</strong> Café Klare
-                er en natcafé for hjemløse og udsatte kvinder. Vi mødes i madklubben
-                onsdage fra kl. 17.00 til ca. 20.15.
-              </p>
-            </div>
-            <div class="location">
-              <img src="img/Lokation.svg" class="icon" alt="Lokation" />
-              <p>
-                <strong>Offsides Sociale Haver ved Bispebjerg Hospital.</strong>
-                Et udendørs aktivitets- og samværstilbud for socialt udsatte og psykisk
-                sårbare. Vi mødes i madklubben onsdage fra kl. 17 til ca. 20.15.
-              </p>
-            </div>
-            <div class="location">
-              <img src="img/Lokation.svg" class="icon" alt="Lokation" />
-              <p>
-                <strong>Angsarkirken i Nordvest.</strong> Frivillige og beboere fra
-                lokalområdet mødes og laver mad sammen. Madklubben mødes torsdage
-                fra kl. 16.30 til ca. 19.45.
-              </p>
-            </div>
-            <div class="location">
-              <img src="img/Lokation.svg" class="icon" alt="Lokation" />
-              <p>
-                <strong>De skæve boliger Toften i Brønshøj.</strong> Vi mødes i madklubben
-                torsdage fra kl. 12.00 til ca. 15.30.
-              </p>
-            </div>
-            <div class="location">
-              <img src="img/Lokation.svg" class="icon" alt="Lokation" />
-              <p>
-                <strong>De skæve boliger Hammelstrupvej i København SV.</strong>
-                Vi mødes i madklubben torsdage fra kl. 11.00 til ca. 14.30.
-              </p>
-            </div>
-            <div class="location">
-              <img src="img/Lokation.svg" class="icon" alt="Lokation" />
-              <p>
-                <strong>De skæve boliger Oliefabriksvej på Amager.</strong> Vi mødes
-                i madklubben torsdage fra kl. 11.00 til ca. 14.30.
-              </p>
-            </div>
+            <Location
+              strong="Pegasus på Enghavevej i København."
+              tekst="Pegasus er et mindre socialpsykiatrisk værested. Madklubben afholdes onsdage fra kl. 17.00 til ca. 20.15."
+            />
+            <Location
+              strong="Café Klare på Vesterbro i København."
+              tekst="Café Klare er en natcafé for hjemløse og udsatte kvinder. Vi mødes i madklubben onsdage fra kl. 17.00 til ca. 20.15."
+            />
+            <Location
+              strong="Offsides Sociale Haver ved Bispebjerg Hospital."
+              tekst="Et udendørs aktivitets- og samværstilbud for socialt udsatte og psykisk sårbare. Vi mødes i madklubben onsdage fra kl. 17 til ca. 20.15."
+            />
+            <Location
+              strong="Angsarkirken i Nordvest."
+              tekst="Frivillige og beboere fra lokalområdet mødes og laver mad sammen. Madklubben mødes torsdage fra kl. 16.30 til ca. 19.45."
+            />
+            <Location
+              strong="De skæve boliger Toften i Brønshøj."
+              tekst="Vi mødes i madklubben torsdage fra kl. 12.00 til ca. 15.30."
+            />
+            <Location
+              strong="De skæve boliger Hammelstrupvej i København SV."
+              tekst="Vi mødes i madklubben torsdage fra kl. 11.00 til ca. 14.30."
+            />
+            <Location
+              strong="De skæve boliger Oliefabriksvej på Amager."
+              tekst="Vi mødes i madklubben torsdage fra kl. 11.00 til ca. 14.30."
+            />
           </div>
         </div>
 
         <div class="fade-effect"></div>
 
-        <label for="toggle" class="toggle-button">⬇️</label>
+        <label for="toggle" class="toggle-button"
+          ><img src="img/Pil.svg" alt="" /></label
+        >
       </div>
-    </div>
-  </body>
-</Layout>
+    </main>
+    <section class="formular-container">
+      <div class="gallery-container"><BilledGalleri /></div>
+      <div><Formular /></div>
+      <div class="gallery-container"><BilledGalleri2 /></div>
+    </section>
 
-<style>
-  .container1 {
-    display: flex;
-    padding: 20px;
-  }
-  h1 {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 20px;
-  }
-  .container2 {
-    text-align: center;
-    padding: 20px;
-    border-top: solid black 0.2px;
-    border-bottom: solid black 0.2px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
+    <style>
+      .formular-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-  .item {
-    display: flex;
-    align-items: start;
-    text-align: left;
-    gap: 10px;
-  }
+      @media (max-width: 1050px) {
+        .gallery-container {
+          display: none;
+        }
+      }
 
-  .checkmark {
-    width: 40px;
-  }
+      .location-section {
+        position: relative;
+        padding: 20px;
+        overflow: hidden;
+      }
 
-  .info {
-    max-width: 60%;
-    padding-right: 50px;
-  }
+      .locations {
+        max-height: 160px; /* Standard begrænset højde */
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+      }
 
-  .side-info {
-    padding-top: 40px;
-  }
+      .more-locations {
+        display: none;
+      }
 
-  .point {
-    display: flex;
-    align-items: center;
-  }
+      /* Fade-effekt */
+      .fade-effect {
+        position: absolute;
+        bottom: 50px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+        pointer-events: none;
+        transition: opacity 0.3s ease-in-out;
+      }
 
-  .icon {
-    width: 40px;
-    margin-right: 10px;
-  }
-  .container {
-    width: 600px;
-  }
+      /* Skjult checkbox */
+      .toggle-checkbox {
+        display: none;
+      }
 
-  .location-section {
-    position: relative;
-    padding: 20px;
-    overflow: hidden;
-  }
+      /* Style til knap */
+      .toggle-button {
+        display: block;
+        margin: 10px auto 0;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        width: 100%;
+      }
 
-  .locations {
-    max-height: 160px; /* Standard begrænset højde */
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
-  }
+      /* Når checkbox er checked */
+      .toggle-checkbox:checked ~ .locations {
+        max-height: 1000px; /* Udvider sektionen */
+      }
 
-  .more-locations {
-    display: none;
-  }
+      .toggle-checkbox:checked ~ .locations .more-locations {
+        display: block;
+      }
 
-  .location {
-    display: flex;
-    align-items: start;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
+      .toggle-checkbox:checked ~ .fade-effect {
+        opacity: 0; /* Fjerner fade-effekten */
+      }
 
-  /* Fade-effekt */
-  .fade-effect {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  /* Skjult checkbox */
-  .toggle-checkbox {
-    display: none;
-  }
-
-  /* Style til knap */
-  .toggle-button {
-    display: block;
-    margin: 10px auto 0;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-    width: 100%;
-  }
-
-  /* Når checkbox er checked */
-  .toggle-checkbox:checked ~ .locations {
-    max-height: 1000px; /* Udvider sektionen */
-  }
-
-  .toggle-checkbox:checked ~ .locations .more-locations {
-    display: block;
-  }
-
-  .toggle-checkbox:checked ~ .fade-effect {
-    opacity: 0; /* Fjerner fade-effekten */
-  }
-
-  /* Roter pilen når dropdown er åben */
-  .toggle-checkbox:checked ~ .toggle-button {
-    transform: rotate(180deg);
-  }
-</style>
+      /* Roter pilen når dropdown er åben */
+      .toggle-checkbox:checked ~ .toggle-button {
+        transform: rotate(180deg);
+      }
+    </style>
+  </body></Layout
+>
